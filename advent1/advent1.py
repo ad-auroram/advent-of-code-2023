@@ -9,8 +9,33 @@ def main():
 
     #once we've looped through all the lines, add each int in the list and return
 
-    calibration = open(calibrate.txt)
+    calibration = open("calibrate.txt")
+    numbers = []
     for line in calibration:
+        lst = []
+        lineNum = []
+        for letter in line:
+            lst.append(letter)
+        for char in lst:
+            if char.isnumeric():
+                lineNum.append(char)
+                break
+        lst.reverse()
+        for char in lst:
+            if char.isnumeric():
+                lineNum.append(char)
+                break
+        cal = lineNum[0]+lineNum[1]
+        cal = int(cal)
+        numbers.append(cal)
+
+    ele = 0
+    total = 0
+    while ele < len(numbers):
+        total = total + numbers[ele]
+        ele += 1
+
+    print(total)
 
 
 
