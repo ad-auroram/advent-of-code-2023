@@ -20,7 +20,8 @@ def findProduct(line):
                 num = int(i[0])
                 if num > blue:
                     blue = num
-    return True
+                    
+    return red*green*blue
 def main():
     games = open("input-day2.txt")
     total = 0
